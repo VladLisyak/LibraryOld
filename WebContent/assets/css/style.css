@@ -1,0 +1,38 @@
+div.success, .subtext.success {
+  font-weight: 700;
+  color: #40954a;
+}
+
+div.errors, .subtext.error {
+  font-weight: 700;
+  color: #954040;
+}
+
+div.errors {
+  margin-bottom: 15px;
+}
+
+#toggle-password, #cancelChanging {
+                display: none;
+}
+
+#toggle, #cancelChanging {
+          margin-bottom: 10px;
+}
+
+#over{
+	position: relative;
+	z-index: 3;
+}
+
+.over{
+	position: relative;
+	color: red;
+	float:right;
+	z-index: 3;
+}
+
+.behind{
+	position: relative;
+	z-index: 1;
+}
