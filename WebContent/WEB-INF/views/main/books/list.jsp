@@ -53,7 +53,7 @@
          </div>
    	     <br>
    	     <c:choose>
-   	     		<c:when test="${! (empty requestScope.books)}">
+   	     		<c:when test="${!(empty requestScope.books)}">
    	     			<c:forEach items="${requestScope.books}" var="book">
 		     			<div class = "behind">
 		      				 <b:book book="${book}" lang="${sessionScope.currLocale}" reff = "${pageContext.request.contextPath}" />

@@ -3,10 +3,12 @@ package ua.nure.lisyak.SummaryTask4.servlet.authorizationServs;
 import java.io.IOException;
 
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
@@ -104,6 +106,8 @@ public class HomeAndLogin extends BaseMain {
 				}
 				default:
 					redirectToAction(Actions.Common.Books.LIST, request, response);
+					HttpSession session = request.getSession();
+					session.setAttribute("userId", user.getId());
 					break;
 				}
 	    }

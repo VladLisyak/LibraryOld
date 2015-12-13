@@ -19,8 +19,7 @@ public abstract class BaseFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
     	HttpServletRequest httpServletRequest = (HttpServletRequest) request;
     	HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-    	System.out.println("amount is"+ request.getParameter("amount"));
-        
+
         doFilter(httpServletRequest, httpServletResponse, chain);
     }
 

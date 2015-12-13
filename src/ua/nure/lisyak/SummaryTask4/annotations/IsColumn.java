@@ -22,5 +22,4 @@ public @interface IsColumn{
      * @return column name
      */
     String value() default "";
-
 }

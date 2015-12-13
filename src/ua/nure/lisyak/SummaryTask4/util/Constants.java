@@ -6,7 +6,8 @@ import java.util.List;
  * Contains initial constants for applications inner needs.
  */
 public final class Constants {
-	
+	public static final String BOOK_AVAILABLE_PATTERN = "Hello, %s, your book %s is available now!";
+	public static final String BOOK_AVAILABLE_TITLE = "Your book is available!";
 	/**
 	 * Application configuration paths.
 	 */
@@ -28,6 +29,7 @@ public final class Constants {
 	  public static final String LOCALES = "locales";
 	  public static final String IMAGE = "image";
 	  public static final String ID = "id";
+	  public static final String BOOK_ID = "bookId";
 	  public static final String DESCRIPTION = "description";
 	  public static final String LANG = "lang";
 	  public static final String CURRENT_LOCALE = "currLocale";

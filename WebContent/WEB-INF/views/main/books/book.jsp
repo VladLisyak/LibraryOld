@@ -1,5 +1,15 @@
 <%@include file="../../../includes/main/mainHead.jsp"%>
 <fmt:message var="title" key="txt.book" />
+<c:set scope="session" var="bookId" value = "${requestScope.book.id}"/>
+
+<c:choose>
+	<c:when test="${!(requestScope.book.inStock eq 0) && sessionScope.currUser eq 'user'}">
+		<c:set scope="request" var="address" value = "${pageContext.request.contextPath}/book"/>
+	</c:when>
+	<c:otherwise>
+		<c:set scope="request" var="address" value = "${pageContext.request.contextPath}/queue"/>
+	</c:otherwise>
+</c:choose>
 <us:wrapper id = "${requestScope.book.id}" title="${title}">
 	<jsp:attribute name="body">
 	<div class="row clearfix">
@@ -44,7 +54,7 @@
                           "${requestScope.book.publisher.title.value(sessionScope.currLocale)}"
             </h4>
       
-      <form id="add-item-form" action="${pageContext.request.contextPath}/book" method="post"
+      <form id="add-item-form" action="${requestScope.address}" method="post"
 					class="variants clearfix">
 			
         <!-- Begin product options -->
@@ -86,13 +96,16 @@
 	            	        </c:otherwise>
             	  </c:choose>	
             	</c:when>
+            	<c:when test="${(requestScope.book.inStock eq 0) && sessionScope.currUser eq 'user'}">
+            			<input type="submit" id="add-to-cart" style = "height: 40px;" class = "btn-success"
+												name="add" value="<fmt:message key="txt.Available"/>">
+            	</c:when>
             	<c:otherwise>
             	  		<c:if test="${!(empty sessionScope.currUser)}">
-            	  				<h3><fmt:message key = "txt.inStock"/> 0</h3>
+            	  				<h3><fmt:message key = "txt.Overdued"/></h3>
             	  		</c:if>
             	</c:otherwise>
             </c:choose>
-									
             </div>
           </div>
       </form>

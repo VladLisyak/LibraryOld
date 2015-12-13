@@ -62,7 +62,7 @@
   
   
   <li class="">
-    <a href="/Library" >
+    <a href="/index" >
       <fmt:message key="txt.home"/>
     </a> 
     

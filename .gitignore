@@ -1,0 +1,10 @@
+.idea
+out
+target
+*.iml
+*.patch
+log
+.classpath
+.project
+
+

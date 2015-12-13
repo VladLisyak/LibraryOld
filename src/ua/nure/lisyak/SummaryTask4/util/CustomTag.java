@@ -41,7 +41,7 @@ public class CustomTag extends SimpleTagSupport {
 		JspWriter out = getJspContext().getOut();
 		out.println("<div class=\"product span3 \"> <div class=\"image\">");
 		out.println("<a href=\""+ reff + "/book?id="+book.getId() +"\">");
-		out.println("<img src=\"/uploads/books/" + book.getImage() + "\">");
+		out.println("<img src=\"/uploads/books/" + book.getImage() + "\" style = \"width:200px; height:200px;\">");
 		out.println("</a> </div> <div class=\"details\"> <a href=\""+ reff + "/book?id="+book.getId() +"\" class=\"clearfix\">");
 		out.println("<h4 class=\"title\">" + book.getTitle().value(lang) + "</h4>  ");
 		for (Author auth : book.getAuthors()) {
